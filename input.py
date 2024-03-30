@@ -1,6 +1,6 @@
 #this code asks the user for an input to create a ticket system for the museum
 # it gathers the visitors input then create the ticket and displays the receipt.
-from code import Artwork, Visitor, Ticket, Exhibition, SpecialEvent
+from system import Artwork, Visitor, Ticket, Exhibition, SpecialEvent
 
 name = input("\nEnter your name: ")
 age = int(input("Enter your age: "))
