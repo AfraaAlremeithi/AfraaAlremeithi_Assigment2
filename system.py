@@ -87,7 +87,7 @@ class SpecialEvent:
         print(f"Price: {self.price}")
 
 #objects example
-art1 = Artwork("Starry Night", "Vincent van Gogh", "1889", "Post-Impressionist painting", "Gallery 1")
+art1 = Artwork("Starry Night", "Vincent van gogh", "1889", "impressionist painting", "Gallery 1")
 art1.display_info()
 
 v1 = Visitor("Afraa Alremeithi", 19, "Emarati")
