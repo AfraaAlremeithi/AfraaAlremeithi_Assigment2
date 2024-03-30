@@ -1,53 +1,18 @@
-from datetime import datetime
+#this code asks the user for an input to create a ticket system for the museum
+# it gathers the visitors input then create the ticket and displays the receipt.
+from code import Artwork, Visitor, Ticket, Exhibition, SpecialEvent
 
-class Artwork:
-    def __init__(self, title, artist, date_ofCreation, description):
-        self.title = title
-        self.artist = artist
-        self.date_ofCreation = date_ofCreation
-        self.description = description
-        self.exhibt_Location = None
+name = input("\nEnter your name: ")
+age = int(input("Enter your age: "))
+nationality = input("Enter your nationality: ")
 
-class Exhibition:
-    def __init__(self, title, duration, location):
-        self.title = title
-        self.duration = duration
-        self.location = location
-        self.artworks = []
+print("Visitor Categories: teacher, student, senior")
+category = input("Enter your category (leave blank if not): ")
 
-    def add_artwork(self, artwork: Artwork):
-        self.artworks.append(artwork)
+visitor = Visitor(name, age, nationality, category)
 
-class Visitor:
-    def __init__(self, name, age, idNumber):
-        self.name = name
-        self.age = age
-        self.idNumber = idNumber
-        self.tickets = []
+exhibition_name = "World Masterpiece"
+Standard_price = 63 #got the Standard price from louvre website
 
-    def purchase_ticket(self, ticket):
-        self.tickets.append(ticket)
-
-class Ticket:
-    def __init__(self, visitor, event, price):
-        self.visitor = visitor
-        self.event = event
-        self.price = price
-
-    def display_receipt(self):
-        print("visitor name:", self.visitor.name)
-        print("event title:", self.event.title)
-        print("ticket price:", self.price)
-
-class Event:
-    def __init__(self, title, duration, location, ticketPrice):
-        self.title = title
-        self.duration = duration
-        self.location = location
-        self.ticketPrice = ticketPrice
-
-class Payment:
-    def __init__(self, amount, method):
-        self.amount = amount
-        self.method = method
-        self.time = datetime.now()
+ticket = Ticket(visitor, exhibition_name, Standard_price)
+ticket.display_receipt()
