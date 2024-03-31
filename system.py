@@ -30,16 +30,16 @@ class Visitor:
 
 
 class Ticket:
-    def __init__(self, visitor, exhibition, inital_price):
+    def __init__(self, visitor, exhibition, Standard_price):
         self.visitor = visitor
         self.exhibition = exhibition
-        self.inital_price = inital_price #i got the initial price from the louvre website
+        self.Standard_price = Standard_price #i got the standard price from the louvre website
 
     def calculate_price(self):
-        ticket_price = self.inital_price
+        ticket_price = self.Standard_price
 
         if 18 <= self.visitor.age <= 60 and self.visitor.category not in ["teacher", "student", "senior"]:
-            ticket_price = self.inital_price
+            ticket_price = self.Standard_price
         else:
             ticket_price = 0  #free ticket for categories ("teacher", "student", "senior")
 
@@ -55,7 +55,7 @@ class Ticket:
         print("\nTicket receipt:")
         print(f"visitor: {self.visitor.name}")
         print(f"exhibition: {self.exhibition}")
-        print(f"inital price: {self.inital_price}")
+        print(f"standard price: {self.Standard_price}")
         print(f"Final price: {final_price}")
 
 
