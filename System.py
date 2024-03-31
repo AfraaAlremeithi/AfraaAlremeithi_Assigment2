@@ -71,6 +71,17 @@ class Exhibition:
         print(f"Location: {self.location}")
         print(f"Duration: {self.duration} days")
 
+class Tour:
+    def __init__(self, guide, date, visitorGroup):
+        self.guide = guide
+        self.date = date
+        self.visitorGroup = visitorGroup
+
+    def display_info(self):
+        print("\nTour details:")
+        print(f"Guide: {self.guide}")
+        print(f"Date: {self.date}")
+        print(f"group: {self.visitorGroup}")
 
 class SpecialEvent:
     def __init__(self, name, location, duration, price):
@@ -99,6 +110,8 @@ exhib1.display_info()
 ticket1 = Ticket(v1, exhib1.name, 63)
 ticket1.display_receipt()
 
-special_event1 = SpecialEvent("light show", "Outdoor space", 15, 150)
-special_event1.display_info()
+t1 = Tour("Khalid", "25-02-2024", "Group 3")
+t1.display_info()
 
+special_E1 = SpecialEvent("light show", "Outdoor space", 15, 150)
+special_E1.display_info()
