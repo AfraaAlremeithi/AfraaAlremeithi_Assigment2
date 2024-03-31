@@ -30,16 +30,16 @@ class Visitor:
 
 
 class Ticket:
-    def __init__(self, visitor, exhibition, base_price):
+    def __init__(self, visitor, exhibition, inital_price):
         self.visitor = visitor
         self.exhibition = exhibition
-        self.base_price = base_price
+        self.inital_price = inital_price #i got the initial price from the louvre website
 
     def calculate_price(self):
-        ticket_price = self.base_price
+        ticket_price = self.inital_price
 
         if 18 <= self.visitor.age <= 60 and self.visitor.category not in ["teacher", "student", "senior"]:
-            ticket_price = self.base_price
+            ticket_price = self.inital_price
         else:
             ticket_price = 0  #free ticket for categories ("teacher", "student", "senior")
 
@@ -53,10 +53,10 @@ class Ticket:
         final_price = self.apply_vat(ticket_price)
 
         print("\nTicket receipt:")
-        print(f"Visitor: {self.visitor.name}")
-        print(f"Exhibition: {self.exhibition}")
-        print(f"Base Price: {self.base_price}")
-        print(f"Final Price: {final_price}")
+        print(f"visitor: {self.visitor.name}")
+        print(f"exhibition: {self.exhibition}")
+        print(f"inital price: {self.inital_price}")
+        print(f"Final price: {final_price}")
 
 
 class Exhibition:
